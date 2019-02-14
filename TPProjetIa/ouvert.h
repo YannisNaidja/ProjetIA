@@ -1,6 +1,7 @@
 #ifndef DEF_OUVERT
 #define DEF_OUVERT
 #include "etat.h"
+#include "ferme.h"
 
 class ouvert{
 
@@ -8,15 +9,13 @@ class ouvert{
 public:
 
     bool Isempty();
-    etat tete();
+    etat get_tete();
     void remove();
-    void add_ferme();
-    void add_ouvert();
-    void generer_voisins();
+    void ajout(etat e);
+    void parcours(ouvert *Ouvert ,ferme *Ferme,etat initial,etat fin );
 
 
-
-    char grille[][];
+    
 
 
 
