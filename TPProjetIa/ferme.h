@@ -8,6 +8,7 @@ class ferme {
     public :
         list<etat> ferme;
          void ajout(etat e);
+         bool etatdansferme(etat e);
 
 };
 #endif

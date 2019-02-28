@@ -11,6 +11,7 @@ class ouvert_pile : public ouvert{
     etat get_tete();
     void remove();
     void ajout(etat e);
+    bool etatdansouvert(etat e);
 
     stack<etat> Ouvert;
 

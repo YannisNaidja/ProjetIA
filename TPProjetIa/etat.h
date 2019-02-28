@@ -2,28 +2,38 @@
 #define DEF_ETAT
 #include <string>
 #include <vector>
+#include "ouvert.h"
+#include "ferme.h"
 
 
 class etat{
 
     public:
 
-        void deplacer_gauche(int bloc_x,int bloc_y,int nb_ligne,int nb_colonne);
-        void deplacer_droite(int bloc_x,int bloc_y,int nb_ligne,int nb_colonne);
-        void deplacer_haut(int bloc_x,int bloc_y,int nb_ligne,int nb_colonne);
-        void deplacer_bas(int bloc_x,int bloc_y,int nb_ligne,int nb_colonne);
+        void deplacer_gauche(int bloc_x,int bloc_y);
+        void deplacer_droite(int bloc_x,int bloc_y);
+        void deplacer_haut(int bloc_x,int bloc_y);
+        void deplacer_bas(int bloc_x,int bloc_y);
         bool Isfinal();//teste si l etat est final
-        void generer_voisins();
+        void generer_voisins(ouvert *Ouvert,ferme *Ferme);
+        int nombre_voisins();
         
        
         etat(int taille);
-        etat();
+        etat(const etat &e);
 
         vector <string> list;
         
         int case_vide_x;
         int case_vide_y;
-        int num_etat;
+        int nb_ligne;
+        int nb_colonne;
+        bool voisin_gauche=false;
+        bool voisin_droite=false;
+        bool voisin_haut=false;
+        bool voisin_bas=false;
+        
+        
 
     
         

@@ -48,6 +48,7 @@ void filereader::remplir_etat_initial(string nom_fic,etat ei){
         ifstream input(nom_fic);
         input.seekg(1,ios::beg);   
         etat ei(nb_lignes);
+        ei.nb_colonne=nb_colonne;
         string mot;
         mot.resize(nb_colonne);
         int lignes_lues=0;
@@ -78,6 +79,7 @@ void filereader::remplir_etat_final(string nom_fic,etat ef){
         ifstream input(nom_fic);
         input.seekg(nb_lignes+1,ios::beg);   
         etat ef(nb_lignes);
+        ef.nb_colonne=nb_colonne;
         string mot;
         mot.resize(nb_colonne);
         int lignes_lues=0;

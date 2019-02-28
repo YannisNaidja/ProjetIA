@@ -13,6 +13,7 @@ public:
     void remove();
     void ajout(etat e);
     void parcours(ouvert *Ouvert ,ferme *Ferme,etat initial,etat fin );
+    bool etatdansouvert(etat e);
 
 
     
