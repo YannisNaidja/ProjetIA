@@ -8,6 +8,7 @@ using namespace std;
     Ouvert->ajout(initial);
     while(!Ouvert->Isempty() && Ouvert->get_tete().list != fin.list){
         etat *e = new etat(Ouvert->get_tete());
+        Ouvert->remove();
         Ferme->ajout(*e);
         e->generer_voisins(Ouvert,Ferme);
     }
