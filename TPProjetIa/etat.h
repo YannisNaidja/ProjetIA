@@ -2,27 +2,32 @@
 #define DEF_ETAT
 #include <string>
 #include <vector>
-#include "ouvert.h"
+class ouvert;
 #include "ferme.h"
+
+
+
 
 
 class etat{
 
     public:
-
+        
         void deplacer_gauche(int bloc_x,int bloc_y);
         void deplacer_droite(int bloc_x,int bloc_y);
         void deplacer_haut(int bloc_x,int bloc_y);
         void deplacer_bas(int bloc_x,int bloc_y);
         bool Isfinal();//teste si l etat est final
-        void generer_voisins(ouvert *Ouvert,ferme *Ferme);
-        int nombre_voisins();
+        void generer_voisins(ouvert *Ouvert, ferme Ferme,etat *fin);
+        void nombre_voisins();
+        void affiche_etat();
         
        
         etat(int taille);
         etat(const etat &e);
+        etat();
 
-        vector <string> list;
+        std::vector <std::string> list;
         
         int case_vide_x;
         int case_vide_y;

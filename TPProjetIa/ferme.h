@@ -1,14 +1,18 @@
 #ifndef DEF_FERME
 #define DEF_FERME
-#include <list>
-#include "etat.h"
+#include <vector>
+class etat;
 
-class ferme {
 
-    public :
-        list<etat> ferme;
-         void ajout(etat e);
-         bool etatdansferme(etat e);
+ class ferme {
+    
+    public:
+    
+
+    std::vector<etat> tferme;
+    void ajoute( etat *e);
+    bool etatdansferme(etat *e);
+    ferme();
 
 };
 #endif

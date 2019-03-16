@@ -1,23 +1,22 @@
 #ifndef DEF_OUVERT
 #define DEF_OUVERT
-#include "etat.h"
 #include "ferme.h"
+class etat;
+
+
 
 class ouvert{
 
 
-public:
+    public:
 
-    bool Isempty();
-    etat get_tete();
-    void remove();
-    void ajout(etat e);
-    void parcours(ouvert *Ouvert ,ferme *Ferme,etat initial,etat fin );
-    bool etatdansouvert(etat e);
-
-
+    virtual bool Isempty() = 0;
+    virtual etat get_tete() = 0;
+    virtual void remove()= 0;
+    virtual void ajout(etat *e,etat *fin)= 0;
+    void parcours(ouvert *Ouvert , ferme Ferme, etat *initial,etat *fin );
+    virtual bool etatdansouvert(etat *e)= 0;
     
-
 
 
 

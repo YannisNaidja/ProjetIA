@@ -1,19 +1,24 @@
 #ifndef DEF_OUVERT_PILE
 #define DEF_OUVERT_PILE
-#include <stack>
+#include <vector>
+#include "etat.h"
 #include "ouvert.h"
 
 
 
-class ouvert_pile : public ouvert{
+class ouvert_pile : public ouvert {
+
+    public:
 
     bool Isempty();
     etat get_tete();
     void remove();
-    void ajout(etat e);
-    bool etatdansouvert(etat e);
+    void ajout(etat *e, etat *fin);
+    bool etatdansouvert(etat *e);
+    
+    ouvert_pile();
 
-    stack<etat> Ouvert;
+    std::vector<etat> Ouvert;
 
 };
 #endif
